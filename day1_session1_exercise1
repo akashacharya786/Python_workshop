@@ -1,0 +1,129 @@
+#1.	Find the compound interest for the given p,n,r  (formula : p(1+n*r/100)n )
+P=int(input("Enter the principal:"))
+n=int(input("Enter the time period:"))
+R=float(input("Enter the rate of interest per unit time period:"))
+A = P*((1 + (R / 100))**n)
+CI=A - P
+print("Compound Intrest is:",CI)
+
+
+#2.	Convert centegrade to farenheit  ( f= 9/5*c+32)
+c=float(input("Enter the value in Centegrade:"))
+farenheat=((9/5)*c+32)
+print("the centegrade in farenheat is:",farenheat)
+
+#3.	Find the greater of two nos 
+num1=input("enter the first number:")
+num2=input("enter the second number:")
+print(max(num1,num2))
+
+#4.	Write a program for finding surface areas of cylinder and cone (2*PI*r*r*h, 1/3*PI*r*r*h) using function.
+import math 
+pi = math.pi
+# Function To Calculate Surface Area of Cone 
+def surfacearea_cone(r, h): 
+    return pi*r*(r+math.sqrt((h**2)+(r**2))) 
+#Function to calculate surface area of cylinder 2πrh+2πr2
+def surfacearea_cylinder(r, h): 
+    return 2 * pi * r * (r + h)
+# Driver Code 
+radius = float(5) 
+height = float(12) 
+
+print( "Surface are of cone : ", surfacearea_cone(radius, height) ) 
+print( "Surface Area Of cylinder: ", surfacearea_cylinder(radius,height) ) 
+
+#5.	Find the greatest of four nos ( using ‘and’ operator)   using function.
+def greatest(n1,n2,n3,n4):
+  if (n1>n2 and n1>n3 and n1>n4):
+    print("n1 is greatest",n1)
+  elif (n2>n1 and n2>n3 and n2>n4):
+    print("n2 is greate",n2)
+  elif (n3>n1 and n3>n2 and n3>n4):
+    print("n3 is greate",n3)
+  else:
+    print("n4 is greatest",n4)
+    
+#code
+num1=10
+num2=200
+num3=0
+num4=35
+greatest(num1,num2,num3,num4)
+
+
+#6.	Write a  menu program to perform the operations ( ODDorEven, Factorial, ODDNoUptoN, PrimeUptoN )
+# using functions for two nos with  menu choice
+#include<bits/stdc++.h> 
+
+def odd_even(num):
+  if num%2==0:
+    print("The number is even")
+  else:
+    print("The number is odd")
+
+def fact(num):
+  fact=1
+  if num==0:
+    print("Factorial of 0 is 1")
+  else:
+    for i in range(1,num+1):
+      fact=fact*i
+    print("The factorial of",num,"is",fact)
+
+def odd(num):
+  for i in range(0,num+1):
+    if (i%2)!=0:
+      print(i)
+
+def prime(num):
+  for num in range(1, num+1):
+    if num > 1:
+       for i in range(2, num):
+           if (num % i) == 0:
+               break
+       else:
+           print(num)
+
+loop=1
+choice=0
+while loop == 1:
+  print ("Welcome to menu")
+  print ("your options are:")
+  print (" ")
+  print("1) Find odd or even number")
+  print("2) find factorial")
+  print("3) find all odd number")
+  print("4) find prime number")
+    
+  print(" ")
+  try:
+    choice = int(input("Choose your option: "))
+  except:
+    print('please enter a valid number for option')
+    print(" ")
+    print(" ")
+
+  if choice==1:
+    number=int(input("enter the number:"))
+    print("Result:",odd_even(number))
+  elif choice==2:
+    number=int(input("enter the number:"))
+    print("Result:",fact(number))
+  elif choice==3:
+    number=int(input("enter the number:"))
+    print("Result:",odd(number))
+  elif choice==4:
+    number=int(input("enter the number:"))
+    print("Result:",prime(number))
+  elif choice == 5:
+    loop = 0
+     
+  else:
+    print("please choice a valid option from 1 to 5")
+    choice=0
+
+      
+
+
+
